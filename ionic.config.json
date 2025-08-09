@@ -1,0 +1,7 @@
+{
+  "name": "programacao-para-dispositivos-moveis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
