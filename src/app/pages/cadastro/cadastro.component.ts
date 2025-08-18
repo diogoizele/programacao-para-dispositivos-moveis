@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, AlertController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router'; 
 
 type User = { nome: string; email: string; senha: string };
 
@@ -11,7 +11,7 @@ type User = { nome: string; email: string; senha: string };
   standalone: true,
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss'],
-  imports: [CommonModule, FormsModule, IonicModule],
+  imports: [CommonModule, FormsModule, IonicModule, RouterModule],  
 })
 export class CadastroComponent {
   nome = '';
