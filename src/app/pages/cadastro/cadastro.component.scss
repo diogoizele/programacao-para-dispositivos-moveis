@@ -1,0 +1,54 @@
+.auth-page {
+  --background: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .auth-container {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    width: 320px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .logo {
+    font-size: 1.6em;
+    color: #008b8b;
+    background: #e6f7f7;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  .input-box {
+    width: 100%;
+    margin-bottom: 15px;
+
+    ion-input {
+      border-radius: 15px;
+      padding: 10px;
+      background: #f3f3f3;
+    }
+  }
+
+  .btn-primary {
+    --background: #008b8b;
+    --color: #fff;
+    --border-radius: 15px;
+    margin-top: 10px;
+  }
+
+  .btn-secondary {
+    --background: #e6e6e6;
+    --color: #000;
+    --border-radius: 15px;
+    margin-top: 10px;
+  }
+}
