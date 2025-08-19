@@ -1,0 +1,148 @@
+.home-page {
+  --background: #1f1f1f;
+  padding: 10px 10px 80px; 
+}
+
+.shell {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 16px;
+  min-height: calc(100vh - 120px);
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+}
+
+.accent {
+  color: #26a5b5;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.separator {
+  margin: 12px 0;
+  --inner-padding-end: 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 6px 2px 10px;
+}
+
+.section-title {
+  font-weight: 600;
+}
+
+.see-all {
+  color: #26a5b5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  padding: 8px 2px 4px;
+}
+
+.chip {
+  border: none;
+  border-radius: 16px;
+  padding: 8px 14px;
+  background: #efefef;
+  color: #777;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.chip.active {
+  background: #222;
+  color: #fff;
+}
+
+.chip.disabled {
+  opacity: 0.7;
+}
+
+.sales-list {
+  margin-top: 8px;
+  display: grid;
+  gap: 12px;
+}
+
+/* Card da venda */
+.sale-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 14px;
+  border-radius: 14px;
+  color: #fff;
+  background: linear-gradient(135deg, #1f3251 0%, #213a63 55%, #2a4772 100%);
+  box-shadow: inset -80px 0 80px rgba(255, 255, 255, 0.06), 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.sale-card .left .product {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.sale-card .left .client {
+  opacity: 0.9;
+}
+
+.sale-card .right {
+  text-align: right;
+}
+
+.sale-card .right .date {
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.sale-card .right .amount {
+  font-weight: 800;
+}
+
+/* Tabbar fake só para visual */
+.tabbar {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 14px;
+  height: 54px;
+  background: #2b2b2b;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #cfcfcf;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.tabbar ion-icon {
+  font-size: 22px;
+  opacity: 0.9;
+}
+
+.tabbar ion-icon.active {
+  color: #ff4d4d; 
+}

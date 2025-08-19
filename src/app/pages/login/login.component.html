@@ -3,20 +3,37 @@
     <h1 class="logo">S.T.O.C.K</h1>
     <h2 class="subtitle">Fazer login</h2>
 
+    <!-- Campo de Email -->
     <ion-item lines="none" class="input-box">
       <ion-label position="stacked">Email</ion-label>
-      <ion-input type="email" placeholder="ContaTeste@gmail.com"></ion-input>
+      <ion-input
+        type="email"
+        placeholder="ContaTeste@gmail.com"
+        [(ngModel)]="username">
+      </ion-input>
     </ion-item>
 
+    <!-- Campo de Senha -->
     <ion-item lines="none" class="input-box">
       <ion-label position="stacked">Senha</ion-label>
-      <ion-input type="password" placeholder="********"></ion-input>
+      <ion-input
+        type="password"
+        placeholder="********"
+        [(ngModel)]="password">
+      </ion-input>
     </ion-item>
 
-    <ion-button expand="block" class="btn-primary">ENTRAR</ion-button>
-     <ion-button expand="block" fill="outline" class="btn-secondary" [routerLink]="['/cadastro']">
-  CRIAR CONTA
-</ion-button>
+    <!-- Botão Entrar -->
+    <ion-button expand="block" class="btn-primary" (click)="login()">
+      ENTRAR
+    </ion-button>
+
+    <!-- Botão Criar Conta -->
+    <ion-button expand="block" fill="outline" class="btn-secondary" [routerLink]="['/cadastro']">
+      CRIAR CONTA
+    </ion-button>
+
+    <!-- Login Social -->
     <div class="social-login">
       <ion-button expand="block" class="btn-social google">
         <ion-icon name="logo-google"></ion-icon>
