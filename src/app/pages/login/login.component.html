@@ -1,54 +1,40 @@
-<ion-content class="login-page" fullscreen>
+<ion-content [fullscreen]="true" class="custom-login-content">
   <div class="login-container">
     <h1 class="logo">S.T.O.C.K</h1>
-    <h2 class="subtitle">Fazer login</h2>
+    <p class="subtitle">Faça login</p>
 
-    <!-- Campo de Email -->
-    <ion-item lines="none" class="input-box">
-      <ion-label position="stacked">Email</ion-label>
-      <ion-input
-        type="email"
-        placeholder="ContaTeste@gmail.com"
-        [(ngModel)]="username">
-      </ion-input>
+    <!-- Email -->
+     
+    <label class="custom-label">Email</label>
+    <ion-item>
+      <ion-input type="email" placeholder="ContaTeste@gmail.com"></ion-input>
     </ion-item>
 
-    <!-- Campo de Senha -->
-    <ion-item lines="none" class="input-box">
-      <ion-label position="stacked">Senha</ion-label>
-      <ion-input
-        type="password"
-        placeholder="********"
-        [(ngModel)]="password">
-      </ion-input>
+    <!-- Senha -->
+    <label class="custom-label">Senha</label>
+    <ion-item>
+      <ion-input type="password" placeholder="**********"></ion-input>
     </ion-item>
 
-    <!-- Botão Entrar -->
-    <ion-button expand="block" class="btn-primary" (click)="login()">
-      ENTRAR
-    </ion-button>
+    <!-- Botões principais -->
+    <ion-button  class="btn-entrar">ENTRAR</ion-button>
+    <ion-button expand="block" class="btn-criar">CRIAR CONTA</ion-button>
 
-    <!-- Botão Criar Conta -->
-    <ion-button expand="block" fill="outline" class="btn-secondary" [routerLink]="['/cadastro']">
-      CRIAR CONTA
-    </ion-button>
-
-    <!-- Login Social -->
+    <!-- Social login -->
     <div class="social-login">
-      <ion-button expand="block" class="btn-social google">
-        <ion-icon name="logo-google"></ion-icon>
+      <ion-button class="google">
+        <img src="assets/icon/google.svg" alt="Google" />
         Fazer login com Google
       </ion-button>
-
-      <ion-button expand="block" class="btn-social instagram">
-        <ion-icon name="logo-instagram"></ion-icon>
+      <ion-button class="instagram">
+        <img src="assets/icon/insta.png" alt="Instagram" />
         Fazer login com Instagram
       </ion-button>
-
-      <ion-button expand="block" class="btn-social facebook">
-        <ion-icon name="logo-facebook"></ion-icon>
+      <ion-button class="facebook">
+        <img src="assets/icon/facebook.svg" alt="Facebook" />
         Fazer login com Facebook
       </ion-button>
     </div>
   </div>
 </ion-content>
+
