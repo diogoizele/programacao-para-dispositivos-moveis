@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule, AlertController } from '@ionic/angular';
 import { Router, RouterModule } from '@angular/router'; 
 
-type User = { nome: string; email: string; senha: string };
+type User = { email: string; senha: string };
 
 @Component({
   selector: 'app-cadastro',
@@ -14,11 +14,9 @@ type User = { nome: string; email: string; senha: string };
   imports: [CommonModule, FormsModule, IonicModule, RouterModule],  
 })
 export class CadastroComponent {
-  nome = '';
-  email = '';
+   email = '';
   senha = '';
-  confirmarSenha = '';
-
+ 
   constructor(private router: Router, private alertCtrl: AlertController) {}
 
   private getUsers(): User[] {
@@ -35,7 +33,7 @@ export class CadastroComponent {
 
   async criarConta() {
     // validações simples
-    if (!this.nome || !this.email || !this.senha || !this.confirmarSenha) {
+    if ( !this.email || !this.senha ) {
       return this.showAlert('Preencha todos os campos.');
     }
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(this.email)) {
@@ -44,16 +42,13 @@ export class CadastroComponent {
     if (this.senha.length < 6) {
       return this.showAlert('A senha deve ter pelo menos 6 caracteres.');
     }
-    if (this.senha !== this.confirmarSenha) {
-      return this.showAlert('As senhas não conferem.');
-    }
 
     const users = this.getUsers();
     if (users.some((u) => u.email.toLowerCase() === this.email.toLowerCase())) {
       return this.showAlert('Já existe uma conta com esse e-mail.');
     }
 
-    users.push({ nome: this.nome, email: this.email, senha: this.senha });
+    users.push({ email: this.email, senha: this.senha });
     this.setUsers(users);
 
     await this.showAlert('Conta criada com sucesso! Faça login para continuar.');

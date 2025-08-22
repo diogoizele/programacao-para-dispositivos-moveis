@@ -1,19 +1,29 @@
-.home-page {
-  --background: #1f1f1f;
-  padding: 10px 10px 80px; 
+ion-content.custom-home-content {
+--background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .shell {
-  background: #ffffff;
+  background: #fff;
   border-radius: 24px;
   padding: 16px;
-  min-height: calc(100vh - 120px);
+  width: 320px;
+  min-height: calc(97vh - 100px);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 25px;
+  margin-bottom: 0px;
+  
 }
 
 .title {
@@ -30,7 +40,7 @@
   width: 40px;
   height: 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  border: 2px solid #fff;
+  border: 2px solid #26a5b5;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -38,6 +48,7 @@
 .separator {
   margin: 12px 0;
   --inner-padding-end: 0;
+  
 }
 
 .section-head {
@@ -45,22 +56,28 @@
   align-items: center;
   justify-content: space-between;
   margin: 6px 2px 10px;
+  
 }
 
 .section-title {
+  margin-top: 20px;
   font-weight: 600;
 }
 
 .see-all {
+  margin-top: 20px;
   color: #26a5b5;
   text-decoration: none;
   font-weight: 600;
 }
 
 .filters {
+  
+  margin-top: 20px;
   display: flex;
   gap: 10px;
   padding: 8px 2px 4px;
+  margin-bottom: 20px;
 }
 
 .chip {
@@ -122,14 +139,15 @@
   font-weight: 800;
 }
 
-/* Tabbar fake só para visual */
+
 .tabbar {
-  position: fixed;
-  left: 12px;
-  right: 12px;
+  --padding: 0px;
+  margin-top: auto;
+  left: 0px;
+  right: 0px;
   bottom: 14px;
   height: 54px;
-  background: #2b2b2b;
+  background: #ffffff;
   border-radius: 18px;
   display: flex;
   align-items: center;

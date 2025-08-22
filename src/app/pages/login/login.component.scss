@@ -1,5 +1,5 @@
 ion-content.custom-login-content {
-  --background: #ffffff;
+  --background: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,7 @@ ion-content.custom-login-content {
   color: #67aec1;
   padding: 10px 30px;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   box-shadow: 0px 4px 6px rgba(83, 83, 89, 0.105);
   display: inline-block;
 }
@@ -31,26 +31,33 @@ ion-content.custom-login-content {
 /* Subtítulo */
 .subtitle {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;  
+  font-weight: bold;  
   color: #333;
 }
 
 /* Labels separados */
-.custom-label {
-  display: block;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  color: #444;
-  margin: 10px 0 5px 5px;
+.fake-btn {
+  --background: #fff;                           
+  color: #000;        
+  font-weight: bold;                       
+  border-radius: 8px;                         
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);    
+  text-align: center;                         
+  font-weight: 500; 
+      margin-bottom: 0px;                      
+  padding: 10px 20px;                      
+  display: inline-block;                     
 }
 
 /* Inputs */
 ion-item {
-  --background: #f8f8f8;
-  --border-radius: 10px;
-  margin-bottom: 15px;
+  --background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); 
+  margin-bottom: 20px;
   --padding-start: 10px;
+   height: 35px;
 
   ion-input {
     color: #26a8e0;
@@ -67,6 +74,8 @@ ion-button {
   font-weight: bold;
   height: 45px;
   margin-top: 10px;
+  text-transform: none !important;
+    
 }
 
 .btn-entrar {
@@ -80,36 +89,35 @@ ion-button {
   height: 35px;
   --background: #6cc2c5;
   --color: #ffffff;
-  border: 2px 
+  border: 2px ;
+  margin-bottom: 80px
 }
 
-/* Botões sociais */
-.social-login ion-button {
-   --border-radius: 30px; /* arredondado */
-  --box-shadow: none;
-  height: 45px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
 
-.social-login ion-button {
-  width: 100%;
-  padding: 10px;
-  border-radius: 30px;
-  font-size: 0.9em;
-  font-weight: 500;
+
+.social-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  img {
-    width: 18px;
-    height: 18px;
-  }
+  justify-content: flex-start;
+  gap: 15px;                  
+  width: 100%;
+  padding: 5px ;
+  border-radius: 30px;
+  background: #555;
+  --box-shadow: none;
+  color: #fff;
+  height: 45px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
+
+.social-btn img {
+ width: 40px;
+  height:40px;
+  border-radius: 50%;
+}
+
 
 .google {
 --background: rgb(87, 90, 97);

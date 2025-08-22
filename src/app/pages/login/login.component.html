@@ -3,38 +3,39 @@
     <h1 class="logo">S.T.O.C.K</h1>
     <p class="subtitle">Faça login</p>
 
-    <!-- Email -->
-     
-    <label class="custom-label">Email</label>
+    <div class="fake-btn">
+  Email
+</div>
     <ion-item>
-      <ion-input type="email" placeholder="ContaTeste@gmail.com"></ion-input>
+      <ion-input type="email" placeholder="ContaTeste@gmail.com" [(ngModel)]="username"></ion-input>
     </ion-item>
 
     <!-- Senha -->
-    <label class="custom-label">Senha</label>
+      <div class="fake-btn">
+  Senha
+</div>
     <ion-item>
-      <ion-input type="password" placeholder="**********"></ion-input>
+      <ion-input type="password" placeholder="**********" [(ngModel)]="password"></ion-input>
     </ion-item>
 
     <!-- Botões principais -->
-    <ion-button  class="btn-entrar">ENTRAR</ion-button>
-    <ion-button expand="block" class="btn-criar">CRIAR CONTA</ion-button>
+    <ion-button  class="btn-entrar" (click)="login()">ENTRAR</ion-button>
+    <ion-button expand="block" class="btn-criar" [routerLink]="['/cadastro']">CRIAR CONTA</ion-button>
 
-    <!-- Social login -->
-    <div class="social-login">
-      <ion-button class="google">
-        <img src="assets/icon/google.svg" alt="Google" />
-        Fazer login com Google
-      </ion-button>
-      <ion-button class="instagram">
-        <img src="assets/icon/insta.png" alt="Instagram" />
-        Fazer login com Instagram
-      </ion-button>
-      <ion-button class="facebook">
-        <img src="assets/icon/facebook.svg" alt="Facebook" />
-        Fazer login com Facebook
-      </ion-button>
-    </div>
+    <button class="social-btn google">
+  <img src="assets/icon/google.png" alt="Google">
+  <span>Criar com Google</span>
+</button>
+
+<button class="social-btn instagram">
+  <img src="assets/icon/insta.png" alt="Instagram">
+  <span>Criar com Instagram</span>
+</button>
+
+<button class="social-btn facebook">
+  <img src="assets/icon/facebook.png" alt="Facebook">
+  <span>Criar com Facebook</span>
+</button>
   </div>
 </ion-content>
 

@@ -1,5 +1,8 @@
-<ion-content class="home-page" fullscreen>
+<ion-content [fullscreen]="true" class="custom-home-content">
   <div class="shell">
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     
     <div class="top-row">
       <div class="hello">
@@ -38,7 +41,7 @@
         </div>
       </div>
     </div>
-  </div>
+ 
 
   
   <div class="tabbar">
@@ -46,4 +49,5 @@
     <ion-icon name="home-outline" class="active"></ion-icon>
     <ion-icon name="person-outline"></ion-icon>
   </div>
+   </div>
 </ion-content>

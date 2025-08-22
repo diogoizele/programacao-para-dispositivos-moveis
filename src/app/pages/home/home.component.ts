@@ -25,7 +25,6 @@ export class HomeComponent {
       : [
           { id: 1, product: 'Nome Produto', client: 'Nome Cliente', date: '2025-12-12', amount: 345 },
           { id: 2, product: 'Nome Produto', client: 'Nome Cliente', date: '2025-05-15', amount: 234 },
-          { id: 3, product: 'Produto X', client: 'Cliente Y', date: '2025-07-10', amount: 590 },
         ];
   }
 
