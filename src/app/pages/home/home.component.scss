@@ -1,17 +1,8 @@
-ion-content.custom-home-content {
---background: #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
 .shell {
-  background: #fff;
+  background: #FBFBFB;
+
   border-radius: 24px;
   padding: 16px;
-  width: 320px;
-  min-height: calc(97vh - 100px);
 
   display: flex;
   flex-direction: column;
@@ -23,7 +14,7 @@ ion-content.custom-home-content {
   align-items: center;
   height: 25px;
   margin-bottom: 0px;
-  
+  background-color: white; 
 }
 
 .title {
@@ -46,17 +37,22 @@ ion-content.custom-home-content {
 }
 
 .separator {
-  margin: 12px 0;
-  --inner-padding-end: 0;
-  
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  margin-top: 6rem;
+  box-shadow: 0 5px 15px  rgba(0,0,0,0.7);
 }
+
 
 .section-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 6px 2px 10px;
-  
+  padding-top: 2rem;
 }
 
 .section-title {

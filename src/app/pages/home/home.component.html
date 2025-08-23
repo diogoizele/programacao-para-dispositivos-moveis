@@ -1,31 +1,37 @@
+<app-header [customTitulo]="true">
+  <div class="title">
+    Olá, <span class="accent">{{ userName }}</span>
+  </div>
+</app-header>
 <ion-content [fullscreen]="true" class="custom-home-content">
   <div class="shell">
-     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    
-    <div class="top-row">
-      <div class="hello">
-        <div class="title">Olá, <span class="accent">{{ userName }}</span></div>
-      </div>
-      <ion-avatar class="avatar">
-        <img src="https://i.pravatar.cc/100?img=12" alt="avatar" />
-      </ion-avatar>
-    </div>
-
-    <ion-item lines="full" class="separator"></ion-item>
-
-    
     <div class="section-head">
       <div class="section-title">Ultimas Vendas:</div>
       <a class="see-all" href="javascript:void(0)">Ver Todas</a>
     </div>
 
-    
     <div class="filters">
-      <button class="chip" [class.active]="filter==='recent'" (click)="setFilter('recent')">Recentes</button>
-      <button class="chip disabled" [class.active]="filter==='high'" (click)="setFilter('high')">Valores mais altos</button>
-      <button class="chip disabled" [class.active]="filter==='low'" (click)="setFilter('low')">Valores mais Baixos</button>
+      <button
+        class="chip"
+        [class.active]="filter === 'recent'"
+        (click)="setFilter('recent')"
+      >
+        Recentes
+      </button>
+      <button
+        class="chip disabled"
+        [class.active]="filter === 'high'"
+        (click)="setFilter('high')"
+      >
+        Valores mais altos
+      </button>
+      <button
+        class="chip disabled"
+        [class.active]="filter === 'low'"
+        (click)="setFilter('low')"
+      >
+        Valores mais Baixos
+      </button>
     </div>
 
     <!-- Lista de vendas -->
@@ -36,18 +42,13 @@
           <div class="client">{{ s.client }}</div>
         </div>
         <div class="right">
-          <div class="date">{{ s.date | date:'dd/MM/yy' }}</div>
-          <div class="amount">{{ s.amount | currency:'BRL':'symbol':'1.0-0' }}</div>
+          <div class="date">{{ s.date | date : "dd/MM/yy" }}</div>
+          <div class="amount">
+            {{ s.amount | currency : "BRL" : "symbol" : "1.0-0" }}
+          </div>
         </div>
       </div>
     </div>
- 
-
-  
-  <div class="tabbar">
-    <ion-icon name="cash-outline"></ion-icon>
-    <ion-icon name="home-outline" class="active"></ion-icon>
-    <ion-icon name="person-outline"></ion-icon>
   </div>
-   </div>
 </ion-content>
+<app-bottom-bar [componenteAtivo]="'home'"></app-bottom-bar>

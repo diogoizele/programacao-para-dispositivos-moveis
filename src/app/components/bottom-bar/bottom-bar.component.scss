@@ -1,0 +1,14 @@
+.bottom-bar {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 16px;
+  padding-bottom: calc(var(--safe-area-inset-bottom) + 16px);
+  ion-button {
+    font-size: 16px;
+    --background: transparent;
+    &.active ion-icon {
+      font-weight: bold;
+      color: #ff4d4d; 
+    }
+  }
+}

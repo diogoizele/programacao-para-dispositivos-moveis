@@ -1,0 +1,11 @@
+<app-header [customTitulo]="true">
+  <h1 class="title-styles">Veja seu <span class="highlight">S.T.O.K</span></h1>
+</app-header>
+<ion-content [fullscreen]="true" class="custom-home-content">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="cadastrarProduto()" class="fab-button">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<app-bottom-bar [componenteAtivo]="'estoque'"></app-bottom-bar>

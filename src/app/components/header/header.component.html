@@ -1,0 +1,23 @@
+<ion-header class="header">
+  <ion-toolbar class="header-container-styles">
+    <!-- Botão voltar condicional -->
+    <ion-buttons slot="start" *ngIf="mostrarBotaoVoltar">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <!-- Título (renderiza HTML se necessário) -->
+    <ion-title *ngIf="!customTitulo" class="title-styles">{{
+      titulo
+    }}</ion-title>
+    <ion-title *ngIf="customTitulo">
+      <ng-content></ng-content>
+    </ion-title>
+
+    <!-- Avatar condicional -->
+    <ion-buttons slot="end" *ngIf="mostrarAvatar">
+      <ion-avatar class="avatar-styles">
+        <img src="https://i.pravatar.cc/100?img=12" alt="avatar" />
+      </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

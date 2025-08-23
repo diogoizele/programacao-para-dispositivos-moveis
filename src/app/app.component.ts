@@ -12,6 +12,7 @@ export class AppComponent {
   constructor(private platform: Platform) {}
 
   ngOnInit() {
+    document.body.classList.remove('dark'); // garante que não está no dark
     this.platform.ready().then(() => {
       SafeArea.getSafeAreaInsets().then(({ insets }) => {
         document.body.style.setProperty(

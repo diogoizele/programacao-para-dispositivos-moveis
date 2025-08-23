@@ -1,17 +1,10 @@
-ion-content.custom-auth-content {
-  --background: #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .auth-container{
-  width: 320px;
   padding: 40px;
   background: #fff;
   border-radius: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
+  height: 100vh;
 }
 
   .logo {

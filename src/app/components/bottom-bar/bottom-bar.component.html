@@ -1,0 +1,13 @@
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons class="bottom-bar">
+      <ion-button
+        *ngFor="let item of icones"
+        (click)="navigate(item.rota)"
+        [ngClass]="{ active: isActive(item.rota) }"
+      >
+        <ion-icon [name]="item.icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

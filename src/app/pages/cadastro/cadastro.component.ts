@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, AlertController } from '@ionic/angular';
-import { Router, RouterModule } from '@angular/router'; 
+import { Router, RouterModule } from '@angular/router';
+import { AutenticacaoService } from '../../services/autenticacao.service';
 
 type User = { email: string; senha: string };
 
@@ -11,13 +12,17 @@ type User = { email: string; senha: string };
   standalone: true,
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss'],
-  imports: [CommonModule, FormsModule, IonicModule, RouterModule],  
+  imports: [CommonModule, FormsModule, IonicModule, RouterModule],
 })
 export class CadastroComponent {
-   email = '';
+  email = '';
   senha = '';
- 
-  constructor(private router: Router, private alertCtrl: AlertController) {}
+
+  constructor(
+    private router: Router,
+    private alertCtrl: AlertController,
+    private authService: AutenticacaoService
+  ) {}
 
   private getUsers(): User[] {
     try {
@@ -33,7 +38,7 @@ export class CadastroComponent {
 
   async criarConta() {
     // validações simples
-    if ( !this.email || !this.senha ) {
+    if (!this.email || !this.senha) {
       return this.showAlert('Preencha todos os campos.');
     }
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(this.email)) {
@@ -45,14 +50,25 @@ export class CadastroComponent {
 
     const users = this.getUsers();
     if (users.some((u) => u.email.toLowerCase() === this.email.toLowerCase())) {
-      return this.showAlert('Já existe uma conta com esse e-mail.');
+      // return this.showAlert('Já existe uma conta com esse e-mail.');
     }
 
     users.push({ email: this.email, senha: this.senha });
-    this.setUsers(users);
+    // this.setUsers(users);
 
-    await this.showAlert('Conta criada com sucesso! Faça login para continuar.');
-    this.router.navigateByUrl('/', { replaceUrl: true }); // volta para o login
+    this.authService
+      .register({ email: this.email, password: this.senha })
+      .subscribe({
+        next: async () => {
+          await this.showAlert(
+            'Conta criada com sucesso! Faça login para continuar.'
+          );
+          this.router.navigateByUrl('/', { replaceUrl: true }); // volta para o login
+        },
+        error: (err) => {
+          this.showAlert('Erro ao criar conta. Tente novamente mais tarde.');
+        },
+      });
   }
 
   voltar() {
@@ -60,8 +76,11 @@ export class CadastroComponent {
   }
 
   private async showAlert(message: string) {
-    const a = await this.alertCtrl.create({ header: 'Atenção', message, buttons: ['OK'] });
+    const a = await this.alertCtrl.create({
+      header: 'Atenção',
+      message,
+      buttons: ['OK'],
+    });
     await a.present();
   }
 }
-

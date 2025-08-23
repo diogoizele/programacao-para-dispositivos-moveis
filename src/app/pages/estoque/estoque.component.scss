@@ -1,0 +1,19 @@
+.title-styles {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+}
+
+.highlight {
+    background: linear-gradient(to right, #51C0C8, #0B9BAB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.fab-button {
+  --background: #6cc2c5;
+  --color: #ffffff;
+  margin-bottom: 10px;
+  margin-right: 8px;
+}
