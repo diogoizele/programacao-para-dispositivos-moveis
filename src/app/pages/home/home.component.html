@@ -3,7 +3,7 @@
     Olá, <span class="accent">{{ userName }}</span>
   </div>
 </app-header>
-<ion-content [fullscreen]="true" class="custom-home-content">
+<ion-content>
   <div class="shell">
     <div class="section-head">
       <div class="section-title">Ultimas Vendas:</div>
@@ -33,18 +33,38 @@
         Valores mais Baixos
       </button>
     </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="cadastrarVenda()" class="fab-button">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <p *ngIf="displayedSales.length === 0" class="empty-state-styles">
+      Nenhum item encontrado.
+    </p>
 
     <!-- Lista de vendas -->
     <div class="sales-list">
       <div class="sale-card" *ngFor="let s of displayedSales">
         <div class="left">
-          <div class="product">{{ s.product }}</div>
-          <div class="client">{{ s.client }}</div>
+          <div class="produto">{{ s.produto }}</div>
+          <div class="client">Cliente: {{ s.cliente }}</div>
         </div>
         <div class="right">
-          <div class="date">{{ s.date | date : "dd/MM/yy" }}</div>
+          <div class="actions-styles">
+            <ion-button fill="clear" (click)="editarVenda(s)">
+              <ion-icon name="create"></ion-icon>
+            </ion-button>
+            <ion-button fill="clear" (click)="removerVenda(s)">
+              <ion-icon name="trash"></ion-icon>
+            </ion-button>
+          </div>
+          <div class="date">
+            Data: {{ s.dataVenda | date : "dd/MM/yy" }}
+          </div>
           <div class="amount">
-            {{ s.amount | currency : "BRL" : "symbol" : "1.0-0" }}
+            Preço:
+            {{ s.preco | currency : "BRL" : "symbol" : "1.0-0" }}
           </div>
         </div>
       </div>

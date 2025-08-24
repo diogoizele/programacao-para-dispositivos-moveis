@@ -1,0 +1,19 @@
+.form-container-styles {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.btn-salvar {
+  margin-top: 32px;
+  border-radius: 8px;
+  --background: #6cc2c5;
+  --color: #ffffff;
+  border: 2px solid #6cc2c5;
+
+  &:active {
+    --background: #5bb0b3;
+    border: 2px solid #5bb0b3;
+  }
+}

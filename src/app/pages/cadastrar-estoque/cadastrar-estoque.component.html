@@ -3,4 +3,73 @@
   [mostrarAvatar]="false"
   [mostrarBotaoVoltar]="true"
 ></app-header>
-<ion-content></ion-content>
+
+<ion-content>
+  <!-- <div class="form-container-styles"> -->
+  <form
+    class="form-container-styles"
+    [formGroup]="produtoForm"
+    (ngSubmit)="salvarProduto()"
+  >
+    <!-- Nome -->
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input formControlName="nome"></ion-input>
+    </ion-item>
+
+    <!-- Quantidade -->
+    <ion-item>
+      <ion-label position="floating">Quantidade</ion-label>
+      <ion-input type="number" formControlName="quantidade"></ion-input>
+    </ion-item>
+
+    <!-- Preço -->
+    <ion-item>
+      <ion-label position="floating">Preço</ion-label>
+      <ion-input type="number" formControlName="preco" step="0.01"></ion-input>
+    </ion-item>
+
+    <!-- Custo -->
+    <ion-item>
+      <ion-label position="floating">Custo</ion-label>
+      <ion-input type="number" formControlName="custo" step="0.01"></ion-input>
+    </ion-item>
+
+    <!-- Fornecedor -->
+    <ion-item>
+      <ion-label position="floating">Fornecedor</ion-label>
+      <ion-input formControlName="fornecedor"></ion-input>
+    </ion-item>
+
+    <!-- Marca -->
+    <ion-item>
+      <ion-label position="floating">Marca</ion-label>
+      <ion-input formControlName="marca"></ion-input>
+    </ion-item>
+
+    <!-- Tirar foto -->
+    <ion-button expand="full" (click)="tirarFoto()">📷 Tirar Foto</ion-button>
+    <!-- Visualizar imagem -->
+    <div *ngIf="img">
+      <img
+        [src]="img"
+        style="
+          width: 100%;
+          max-height: 200px;
+          object-fit: contain;
+          margin: 10px 0;
+        "
+      />
+    </div>
+
+    <ion-button
+      class="btn-salvar"
+      expand="full"
+      type="submit"
+      [disabled]="produtoForm.invalid"
+    >
+      {{ isEdit ? 'Salvar Alterações' : 'Cadastrar Produto' }}
+    </ion-button>
+  </form>
+  <!-- </div> -->
+</ion-content>

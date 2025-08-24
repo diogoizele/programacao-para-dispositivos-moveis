@@ -1,7 +1,53 @@
 <app-header [customTitulo]="true">
-  <h1 class="title-styles">Veja seu <span class="highlight">S.T.O.K</span></h1>
+  <h1 class="title-styles">Veja seu <span class="highlight">S.T.O.C.K</span></h1>
 </app-header>
-<ion-content [fullscreen]="true" class="custom-home-content">
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <p class="empty-state-styles" *ngIf="produtos.length === 0">Nenhum item encontrado.</p>
+    <ion-item class="estoque-item-styles" *ngFor="let produto of produtos">
+      <div class="left">
+        <ion-thumbnail slot="start">
+          <img [src]="produto.img ?? 'https://www.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600nw-1037719192.jpg'" />
+        </ion-thumbnail>
+
+        <p>
+          Fornecedor: <br />
+          {{ produto.fornecedor }}
+        </p>
+        <br />
+        <p>
+          Marca:
+          {{ produto.marca }}
+        </p>
+      </div>
+      <ion-label class="right">
+        <h2>{{ produto.nome }}</h2>
+        <p>
+          Custo: <br />
+          {{ produto.custo | currency }}
+        </p>
+        <div class="estoque-preco">
+          <p>
+            Preço: <br />
+            {{ produto.preco | currency }}
+          </p>
+          <p>
+            Estoque: <br />
+            {{ produto.quantidade }}
+          </p>
+        </div>
+      </ion-label>
+      <div class="actions-styles">
+        <ion-button fill="clear" (click)="editarProduto(produto)">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" (click)="removerProduto(produto)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="cadastrarProduto()" class="fab-button">
       <ion-icon name="add"></ion-icon>

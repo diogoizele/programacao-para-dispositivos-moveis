@@ -30,6 +30,6 @@ export const routes: Routes = [
     component: CadastrarVendaComponent,
   },
   { path: 'perfil', component: PerfilComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, // rota default
-  { path: '**', redirectTo: 'login' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // rota default
+  { path: '**', redirectTo: 'home' },
 ];

@@ -5,8 +5,13 @@
 .header-container-styles {
   --background: white;
   padding-right: 24px;
-  padding-top: calc(var(--safe-area-inset-top) + 24px);
+  padding-left: 16px;
+  padding-top: calc(var(--safe-area-inset-top) + 16px);
   padding-bottom: 16px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  
 }
 
 .avatar-styles {
@@ -22,4 +27,7 @@
   font-size: 22px;
   font-weight: 600;
   color: #222;
+  margin: 0;
+  padding: 0;
+  margin-top: 0;
 }
